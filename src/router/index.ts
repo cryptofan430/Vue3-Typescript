@@ -1,26 +1,56 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
+import useAuthStore from '@/store/auth'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: '/',
+    name: 'Login',
+    component: () => import('@/views/Login.vue'),
+    meta: {
+      requiresUnauth: true,
+    },
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('@/views/Dashboard.vue'),
+    meta: {
+      requiresAuth: true,
+    },
   },
-];
+  {
+    path: '/task-create',
+    name: 'TaskCreate',
+    component: () => import('@/views/TaskCreate.vue'),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/',
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-});
+})
 
-export default router;
+const { isAuthenticated } = useAuthStore()
+
+router.beforeEach((to, _, next) => {
+  if (to.meta?.requiresAuth && !isAuthenticated.value) {
+    next({ name: 'Login' })
+    return
+  }
+
+  if (to.meta?.requiresUnauth && isAuthenticated.value) {
+    next({ name: 'Dashboard' })
+    return
+  }
+
+  next()
+})
+
+export default router
