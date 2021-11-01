@@ -3,14 +3,13 @@
 ## Introduction:
 
 1. Recruitment consists of 2 mandatory and 2 optional tasks.
-2. You have 3 days to complete task.
-3. Prepared code as a starting point for recruitment task can be found at https://gitlab.com/pawelkaczoruk/freelanceinfluence-task
-4. Your task submission must be pushed to a repository manager like Github or Gitlab and link shared with us. Screenshot or video presentation of working code will not be accepted.
-5. API documentation is present on swagger: https://003.freelanceinfluence.xyz/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
-6. The main focus is code quality, eslint and prettier are both set up, take advantage of that.
-7. Tech stack that can be used to solve this task: TypeScript, Vue 3 (use Composition API only, don't use Options API), SCSS, Axios, Vue Router. Other plugins, UI libraries, etc. shouldn't be used.
-8. The app was created with node 14.15, if you have problems running it then your node version might be the issue.
-9. If you have any issues and questions then ask them on recruitment channel and not on PM.
+2. Prepared code as a starting point for recruitment task can be found at https://gitlab.com/pawelkaczoruk/freelanceinfluence-task
+3. Your task submission must be pushed to a repository manager like Github or Gitlab and link shared with us. Screenshot or video presentation of working code will not be accepted.
+4. API documentation is present on swagger: https://003.freelanceinfluence.xyz/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+5. The main focus is code quality, eslint and prettier are both set up, take advantage of that.
+6. Tech stack that can be used to solve this task: TypeScript, Vue 3 (use Composition API only, don't use Options API), SCSS, Axios, Vue Router. Other plugins, UI libraries, etc. shouldn't be used.
+7. The app was created with node 14.15, if you have problems running it then your node version might be the issue.
+8. If you have any issues and questions then ask them on recruitment channel and not on PM.
 
 Account creditentials for your test:
 
