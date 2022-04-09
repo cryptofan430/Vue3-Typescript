@@ -4,7 +4,7 @@ import { QueryParams } from '@/types/api.model'
 import useAuthStore from '@/store/auth'
 
 const api = axios.create({
-  baseURL: 'https://003.freelanceinfluence.xyz',
+  baseURL: 'https://influespace.com/api',
   withCredentials: true,
 })
 
