@@ -2,7 +2,7 @@
   <div class="task-create">
     <h1 class="page-title">Task Create view</h1>
     <div class="create-form">
-      <Form v-slot="{ errors }" :validation-schema="schema" @submit="addTask">
+      <Form v-slot="{ errors }" :validation-schema="schema" @submit="submitTask">
         <div class="form-row">
           <div class="form-group col-5">
             <label class="label">Title:</label>
@@ -106,12 +106,12 @@ export default defineComponent({
     Field,
   },
   setup() {
-    const { task, addTask } = useTask()
+    const { task, submitTask } = useTask()
 
     return {
       task,
       TaskSocialPlatform,
-      addTask,
+      submitTask,
       schema,
     }
   },

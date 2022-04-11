@@ -4,7 +4,7 @@ import { TaskInfo, TaskPublicInfo } from '@/types/task.model'
 
 const { setMyTask } = useTaskStore()
 
-const add_Task = async (task: TaskInfo) => {
+const addTask = async (task: TaskInfo) => {
     const data = {
         title: task.title,
         description: task.description,
@@ -35,7 +35,7 @@ const fetchTask = async () => {
 
 export default function useTasksController() {
     return {
-        add_Task,
+        addTask,
         fetchTask
     }
 }

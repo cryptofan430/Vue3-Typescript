@@ -5,7 +5,7 @@ import { TaskInfo } from '@/types/task.model'
 import { Currency } from '@/types/money.model'  
 
 export default function useTask() {
-  const {add_Task} = useTasksController()
+  const {addTask} = useTasksController()
   const router = useRouter() 
 
   const task = reactive<TaskInfo>({
@@ -30,8 +30,8 @@ export default function useTask() {
     task.filesIds = ''
   }
 
-  const addTask = () => {
-    add_Task(task)
+  const submitTask = () => {
+    addTask(task)
       .then(() => {
         router.push({ name: 'Dashboard' })
       })
@@ -42,7 +42,7 @@ export default function useTask() {
 
   return {
     task,
-    addTask,
+    submitTask,
     clear
   }
 }
